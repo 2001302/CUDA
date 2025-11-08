@@ -25,20 +25,6 @@ if(WIN32)
     else()
         message(FATAL_ERROR "CUDA compiler (nvcc) not found. Please install CUDA Toolkit.")
     endif()
-    
-    # Visual Studio가 있으면 MSVC 컴파일러 찾기
-    find_program(CMAKE_CXX_COMPILER
-        NAMES cl.exe
-        PATHS
-            "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/*/bin/Hostx64/x64"
-            "C:/Program Files/Microsoft Visual Studio/2022/Professional/VC/Tools/MSVC/*/bin/Hostx64/x64"
-            "C:/Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/*/bin/Hostx64/x64"
-        NO_DEFAULT_PATH
-    )
-    
-    if(CMAKE_CXX_COMPILER)
-        message(STATUS "Found MSVC: ${CMAKE_CXX_COMPILER}")
-    endif()
 endif()
 
 # CUDA 언어를 나중에 활성화 (식별 단계 건너뛰기)
@@ -63,13 +49,11 @@ set(CMAKE_CUDA_STANDARD 17)
 set(CMAKE_CUDA_ARCHITECTURES "75;80;89" CACHE STRING "CUDA architectures")
 set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -O3")
 
-# Windows에서 MSVC 사용 시 CUDA 컴파일러 설정
+# Windows에서 MSVC 사용 시 CUDA 컴파일러 플래그 설정 (선택사항)
 if(WIN32 AND MSVC)
-    # CUDA 컴파일러가 MSVC를 호스트 컴파일러로 사용하도록 설정
-    set(CMAKE_CUDA_HOST_COMPILER "${CMAKE_CXX_COMPILER}")
-    # CUDA 13.0 호환성 설정
+    # UTF-8 인코딩 명시 (한글 주석/파일명 사용 시 유용)
     set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -Xcompiler /utf-8")
-    # CUDA 컴파일러 경고 억제 (코드 페이지 경고)
+    # 코드 페이지 경고 억제
     set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -Xcompiler /wd4819")
 endif()
 
