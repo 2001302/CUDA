@@ -1,7 +1,7 @@
-#include "common/Logger.h"
+#include "common/logger.h"
 
 int main() {
-    auto& logger = common::Logger::getInstance();
+    auto& logger = common::Logger::get_instance();
     
     logger.info("Hello, World!");
     logger.debug("This is a debug message");
@@ -10,4 +10,3 @@ int main() {
     
     return 0;
 }
-

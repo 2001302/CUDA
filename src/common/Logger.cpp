@@ -1,14 +1,14 @@
-#include "common/Logger.h"
+#include "common/logger.h"
 #include <ctime>
 
 namespace common {
 
-Logger& Logger::getInstance() {
+Logger& Logger::get_instance() {
     static Logger instance;
     return instance;
 }
 
-std::string Logger::getCurrentTime() const {
+std::string Logger::get_current_time() const {
     auto now = std::chrono::system_clock::now();
     auto time = std::chrono::system_clock::to_time_t(now);
     auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(
@@ -28,7 +28,7 @@ std::string Logger::getCurrentTime() const {
     return ss.str();
 }
 
-std::string Logger::levelToString(LogLevel level) const {
+std::string Logger::level_to_string(LogLevel level) const {
     switch (level) {
         case LogLevel::DEBUG:   return "DEBUG";
         case LogLevel::INFO:    return "INFO ";
@@ -38,7 +38,7 @@ std::string Logger::levelToString(LogLevel level) const {
     }
 }
 
-std::string Logger::levelToColor(LogLevel level) const {
+std::string Logger::level_to_color(LogLevel level) const {
 #ifdef _WIN32
     // Windows console color codes
     switch (level) {
@@ -61,9 +61,9 @@ std::string Logger::levelToColor(LogLevel level) const {
 }
 
 void Logger::log(LogLevel level, const std::string& message) {
-    std::string time = getCurrentTime();
-    std::string levelStr = levelToString(level);
-    std::string color = levelToColor(level);
+    std::string time = get_current_time();
+    std::string level_str = level_to_string(level);
+    std::string color = level_to_color(level);
     std::string reset = "";
     
 #ifndef _WIN32
@@ -71,7 +71,7 @@ void Logger::log(LogLevel level, const std::string& message) {
 #endif
     
     std::cout << "[" << time << "] "
-              << color << "[" << levelStr << "]" << reset
+              << color << "[" << level_str << "]" << reset
               << " " << message << std::endl;
 }
 

@@ -23,7 +23,7 @@ endif()
 
 # Common library (shared utilities)
 add_library(common STATIC
-    src/common/Logger.cpp
+    src/common/logger.cpp
 )
 
 target_include_directories(common PUBLIC
@@ -46,9 +46,9 @@ add_executable(example1
     src/example1/main.cpp
 )
 
-target_link_libraries(example1 PRIVATE common)
+target_link_libraries(example1 PUBLIC common)
 
-target_include_directories(example1 PRIVATE
+target_include_directories(example1 PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 

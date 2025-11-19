@@ -18,7 +18,7 @@ enum class LogLevel {
 
 class Logger {
 public:
-    static Logger& getInstance();
+    static Logger& get_instance();
     
     void log(LogLevel level, const std::string& message);
     
@@ -33,9 +33,9 @@ private:
     Logger(const Logger&) = delete;
     Logger& operator=(const Logger&) = delete;
     
-    std::string getCurrentTime() const;
-    std::string levelToString(LogLevel level) const;
-    std::string levelToColor(LogLevel level) const;
+    std::string get_current_time() const;
+    std::string level_to_string(LogLevel level) const;
+    std::string level_to_color(LogLevel level) const;
 };
 
 } // namespace common

@@ -1,0 +1,46 @@
+# C++ Naming Conventions
+
+## General Rules
+- Use snake_case for all identifiers (functions, variables, file names)
+- Use UPPER_SNAKE_CASE for constants and macros
+- Use PascalCase for class names and struct names (C++ standard convention)
+- Use PascalCase for enum class names (C++ standard convention)
+
+## File Naming
+- Header files: `logger.h`, `my_class.h` (snake_case)
+- Source files: `logger.cpp`, `my_class.cpp` (snake_case)
+- Use lowercase with underscores for all file names
+
+## Function Naming
+- All functions: `get_instance()`, `calculate_total()`, `process_data()`
+- Private member functions: `get_current_time()`, `level_to_string()`
+- Static functions: `create_instance()`, `validate_input()`
+
+## Variable Naming
+- Local variables: `user_name`, `total_count`, `is_valid`
+- Member variables: `m_name`, `m_count` (optional prefix) or just `name`, `count`
+- Parameters: `user_id`, `message_text`, `log_level`
+- Constants: `MAX_SIZE`, `DEFAULT_TIMEOUT`
+
+## Class and Struct Naming
+- Classes: `Logger`, `DataProcessor`, `NetworkManager` (PascalCase)
+- Structs: `UserInfo`, `ConfigData` (PascalCase)
+
+## Enum Naming
+- Enum classes: `LogLevel`, `ErrorCode` (PascalCase)
+- Enum values: `DEBUG`, `INFO`, `WARNING` (UPPER_SNAKE_CASE)
+
+## Namespace Naming
+- Namespaces: `common`, `utils`, `network` (lowercase, snake_case for multi-word)
+
+## Comments
+- All comments must be in English
+- Use clear, descriptive comments for complex logic
+- Document public APIs with clear descriptions
+
+## Code Style
+- Use 4 spaces for indentation
+- Use braces for all control structures (if, for, while)
+- Place opening brace on the same line
+- Use const correctness (const methods, const references where appropriate)
+
