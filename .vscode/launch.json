@@ -2,7 +2,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "C++ Debug (MSVC)",
+            "name": "C++ Debug (MSVC) - Debug Mode",
             "type": "cppvsdbg",
             "request": "launch",
             "program": "${workspaceFolder}/build/bin/Debug/CUDA_Practice.exe",
@@ -14,7 +14,7 @@
             "preLaunchTask": "CMake: Build"
         },
         {
-            "name": "C++ Debug (MSVC) - Release",
+            "name": "C++ Debug (MSVC) - Release Mode",
             "type": "cppvsdbg",
             "request": "launch",
             "program": "${workspaceFolder}/build/bin/Release/CUDA_Practice.exe",
