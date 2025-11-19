@@ -16,16 +16,24 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 
-# MSVC 컴파일러 옵션
+# MSVC 컴파일러 옵션 (전역)
 if(MSVC)
     add_compile_options(/W4 /permissive-)
-    add_compile_options($<$<CONFIG:Debug>:/Od /Zi>)
-    add_compile_options($<$<CONFIG:Release>:/O2>)
-    add_link_options($<$<CONFIG:Debug>:/DEBUG>)
 endif()
 
 # 실행 파일 추가
 add_executable(${PROJECT_NAME} src/main.cpp)
+
+# MSVC 타겟별 컴파일 옵션 (generator expression 사용)
+if(MSVC)
+    target_compile_options(${PROJECT_NAME} PRIVATE
+        $<$<CONFIG:Debug>:/Od /Zi>
+        $<$<CONFIG:Release>:/O2>
+    )
+    target_link_options(${PROJECT_NAME} PRIVATE
+        $<$<CONFIG:Debug>:/DEBUG>
+    )
+endif()
 
 # 헤더 파일 디렉토리 추가 (필요시)
 target_include_directories(${PROJECT_NAME} PRIVATE
