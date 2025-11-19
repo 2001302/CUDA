@@ -132,9 +132,9 @@
             ]
         },
         {
-            "label": "Run (Debug)",
+            "label": "Run example1 (Debug)",
             "type": "shell",
-            "command": "${workspaceFolder}/build/bin/Debug/CUDA_Practice.exe",
+            "command": "${workspaceFolder}/build/bin/Debug/example1.exe",
             "args": [],
             "group": {
                 "kind": "test",
@@ -150,9 +150,9 @@
             "problemMatcher": []
         },
         {
-            "label": "Run (Release)",
+            "label": "Run example1 (Release)",
             "type": "shell",
-            "command": "${workspaceFolder}/build/bin/Release/CUDA_Practice.exe",
+            "command": "${workspaceFolder}/build/bin/Release/example1.exe",
             "args": [],
             "group": {
                 "kind": "test",

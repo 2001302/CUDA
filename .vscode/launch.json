@@ -2,28 +2,28 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "C++ Debug (MSVC) - Debug Mode",
+            "name": "C++ Debug (MSVC) - example1 Debug Mode",
             "type": "cppvsdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/bin/Debug/CUDA_Practice.exe",
+            "program": "${workspaceFolder}/build/bin/Debug/example1.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
             "console": "externalTerminal",
-            "preLaunchTask": "CMake: Build"
+            "preLaunchTask": "CMake: Build (Debug)"
         },
         {
-            "name": "C++ Debug (MSVC) - Release Mode",
+            "name": "C++ Debug (MSVC) - example1 Release Mode",
             "type": "cppvsdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/bin/Release/CUDA_Practice.exe",
+            "program": "${workspaceFolder}/build/bin/Release/example1.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
             "console": "externalTerminal",
-            "preLaunchTask": "CMake: Build"
+            "preLaunchTask": "CMake: Build (Release)"
         }
     ]
 }
