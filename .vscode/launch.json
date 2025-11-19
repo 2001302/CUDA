@@ -2,41 +2,29 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug vector_add",
-            "type": "cppdbg",
+            "name": "C++ Debug (MSVC)",
+            "type": "cppvsdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/bin/vector_add.exe",
+            "program": "${workspaceFolder}/build/Debug/CUDA_Practice.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
-            "externalConsole": false,
-            "MIMode": "gdb",
-            "miDebuggerPath": "gdb.exe",
-            "setupCommands": [
-                {
-                    "description": "Enable pretty-printing for gdb",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                }
-            ],
-            "preLaunchTask": "CMake: Build vector_add"
+            "console": "externalTerminal",
+            "preLaunchTask": "CMake: Build"
         },
         {
-            "name": "Run vector_add (No Debug)",
-            "type": "cppdbg",
+            "name": "C++ Debug (MSVC) - Release",
+            "type": "cppvsdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/bin/vector_add.exe",
+            "program": "${workspaceFolder}/build/Release/CUDA_Practice.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
-            "externalConsole": false,
-            "MIMode": "gdb",
-            "miDebuggerPath": "gdb.exe",
-            "preLaunchTask": "CMake: Build vector_add"
+            "console": "externalTerminal",
+            "preLaunchTask": "CMake: Build"
         }
     ]
 }
-
 
