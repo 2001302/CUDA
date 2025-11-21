@@ -130,6 +130,42 @@
             },
             "dependsOn": "Build (Release)",
             "problemMatcher": []
+        },
+        {
+            "label": "Run example2 (Debug)",
+            "type": "shell",
+            "command": "${workspaceFolder}/batch/run-example2-debug.bat",
+            "args": [],
+            "group": {
+                "kind": "test",
+                "isDefault": false
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "focus": true,
+                "clear": false
+            },
+            "dependsOn": "Build (Debug)",
+            "problemMatcher": []
+        },
+        {
+            "label": "Run example2 (Release)",
+            "type": "shell",
+            "command": "${workspaceFolder}/batch/run-example2-release.bat",
+            "args": [],
+            "group": {
+                "kind": "test",
+                "isDefault": false
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "focus": true,
+                "clear": false
+            },
+            "dependsOn": "Build (Release)",
+            "problemMatcher": []
         }
     ]
 }
