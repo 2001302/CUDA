@@ -1,8 +1,6 @@
 #include <iostream>
 #include <vector>
-
-// CUDA function declaration
-extern "C" void add_vectors_cuda(float* a, float* b, float* c, int n);
+#include "cuda_common/cuda_utils.h"
 
 int main() {
     const int n = 5;

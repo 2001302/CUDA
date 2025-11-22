@@ -19,10 +19,14 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 # MSVC compiler options (global)
 if(MSVC)
     add_compile_options(/W4 /permissive-)
+    # Set runtime library to avoid LNK4098 warning
+    # Use dynamic runtime (/MD) for all targets
+    set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreadedDLL")
 endif()
 
 # Add subdirectories
 add_subdirectory(src/common)
+add_subdirectory(src/cuda_common)
 add_subdirectory(src/example1)
 add_subdirectory(src/example2)
 
