@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include "cuda_common/cuda_utils.h"
+#include "cuda/cuda_utils.h"
 
 int main() {
     const int n = 5;

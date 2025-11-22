@@ -26,7 +26,7 @@ endif()
 
 # Add subdirectories
 add_subdirectory(src/common)
-add_subdirectory(src/cuda_common)
+add_subdirectory(src/cuda)
 add_subdirectory(src/example1)
 add_subdirectory(src/example2)
 

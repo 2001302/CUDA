@@ -11,7 +11,7 @@ target_include_directories(example2 PUBLIC
 target_link_libraries(example2 
     PUBLIC 
     common
-    cuda_common
+    cuda
 )
 
 # MSVC target-specific compile options
