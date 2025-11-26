@@ -1,4 +1,3 @@
-# Example1 executable
 add_executable(example1
     main.cpp
 )
@@ -9,7 +8,6 @@ target_include_directories(example1 PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/../../include
 )
 
-# MSVC target-specific compile options
 if(MSVC)
     target_compile_options(example1 PRIVATE
         $<$<CONFIG:Debug>:/Od /Zi>
