@@ -1,11 +1,11 @@
 # CUDA common library - shared CUDA utilities
 # This library contains only .cu files
 add_library(cuda STATIC
-    simple.cu
+    add_vector.cu
 )
 
 # Explicitly set CUDA language for .cu files
-set_source_files_properties(simple.cu PROPERTIES
+set_source_files_properties(add_vector.cu PROPERTIES
     LANGUAGE CUDA
 )
 

@@ -1,5 +1,6 @@
 #include <cuda_runtime.h>
 #include <iostream>
+#include "cuda/add_vector.h"
 
 // CUDA kernel to add two vectors
 __global__ void add_vectors_kernel(float* a, float* b, float* c, int n) {
