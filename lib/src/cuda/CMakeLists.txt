@@ -15,7 +15,7 @@ else()
 endif()
 
 target_include_directories(cuda PUBLIC
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../include
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../../lib/include
 )
 
 if(MSVC)

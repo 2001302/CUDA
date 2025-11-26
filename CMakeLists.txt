@@ -22,8 +22,8 @@ if(MSVC)
     set(CMAKE_CUDA_HOST_COMPILER ${CMAKE_CXX_COMPILER})
 endif()
 
-add_subdirectory(src/common)
-add_subdirectory(src/cuda)
+add_subdirectory(lib/src/common)
+add_subdirectory(lib/src/cuda)
 add_subdirectory(src/example1)
 add_subdirectory(src/example2)
 

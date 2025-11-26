@@ -3,7 +3,7 @@ add_executable(example2
 )
 
 target_include_directories(example2 PUBLIC
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../include
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../lib/include
 )
 
 target_link_libraries(example2 PUBLIC

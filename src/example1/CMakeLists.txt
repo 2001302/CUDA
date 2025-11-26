@@ -5,7 +5,7 @@ add_executable(example1
 target_link_libraries(example1 PUBLIC common)
 
 target_include_directories(example1 PUBLIC
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../include
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../lib/include
 )
 
 if(MSVC)
