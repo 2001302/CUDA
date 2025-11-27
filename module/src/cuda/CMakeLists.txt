@@ -15,8 +15,10 @@ else()
 endif()
 
 target_include_directories(cuda PUBLIC
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../../lib/include
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../include
 )
+
+target_link_libraries(cuda PUBLIC common)
 
 if(MSVC)
     get_target_property(CUDA_COMPILE_OPTIONS cuda COMPILE_OPTIONS)

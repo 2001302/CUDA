@@ -3,7 +3,7 @@ add_library(common STATIC
 )
 
 target_include_directories(common PUBLIC
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../../lib/include
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../include
 )
 
 if(MSVC)
